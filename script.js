@@ -2,9 +2,6 @@ const gameContainer = document.getElementById("game");
 const scoreBoard = document.querySelector('#score');
 const form = document.querySelector('form');
 
-// let lowScores = JSON.parse(localStorage.storedScores);
-// let lowGuess = JSON.parse(localStorage.avgGuess);
-
 let cards;
 let COLORS = [];
 let score = 0;
@@ -155,7 +152,6 @@ function handleCardClick(event) {
       console.log(pairs);
 
       if(pairs >= gameContainer.childElementCount / 2) {
-        // scoreBoard.innerText = `You won! Your score is ${score}  `;
       
         let avgGuess = score/ gameContainer.childElementCount;
         scoreBoard.innerText = `Nice work! Your score is ${score} and your average guess per card is ${avgGuess}.`;
@@ -199,6 +195,3 @@ function handleCardClick(event) {
     }, 1000)
   }
 }
-
-// lowScores = JSON.parse(localStorage.storedScores);
-// lowGuess = JSON.parse(localStorage.avgGuess);
