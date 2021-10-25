@@ -155,13 +155,9 @@ function handleCardClick(event) {
       console.log(pairs);
 
       if(pairs >= gameContainer.childElementCount / 2) {
-        scoreBoard.innerText = `You won! Your score is ${score}  `;
-        // storedScores.push(score);
-        // if( score < lowScores[0]) {
-        // localStorage.setItem('storedScores', JSON.stringify(score));
+        // scoreBoard.innerText = `You won! Your score is ${score}  `;
       
         let avgGuess = score/ gameContainer.childElementCount;
-        // localStorage.setItem('avgGuess', JSON.stringify(avgGuess));
         scoreBoard.innerText = `Nice work! Your score is ${score} and your average guess per card is ${avgGuess}.`;
 
 
