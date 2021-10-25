@@ -1,11 +1,6 @@
 const gameContainer = document.getElementById("game");
 const scoreBoard = document.querySelector('#score');
 const form = document.querySelector('form');
-let lowScores;
-let lowGuess;
-
-let storedScores;
-let avgGuess;
 
 // let lowScores = JSON.parse(localStorage.storedScores);
 // let lowGuess = JSON.parse(localStorage.avgGuess);
@@ -16,6 +11,14 @@ let score = 0;
 let pairs = 0;
 let cardOne;
 let cardTwo;
+
+let lowScores = localStorage.getItem('lowScores')
+? JSON.parse(localStorage.getItem('lowScores'))
+: [];
+
+let lowGuess = localStorage.getItem('lowGuess')
+? JSON.parse(localStorage.getItem('lowGuess'))
+: [];
 
 
 document.addEventListener('DOMContentLoaded', setGame)
@@ -95,9 +98,9 @@ function createDivsForColors(colorArray) {
   shuffle(COLORS);
 
   scoreBoard.innerText = '';
-  if(lowScores) {
+  if(lowScores.length >= 1) {
   const lowScore = document.createElement('p');
-  lowScore.innerText = `The lowest score is ${lowScores}`;
+  lowScore.innerText = `The lowest score is ${lowScores[0]}`;
   scoreBoard.prepend(lowScore);
   }
 
@@ -125,11 +128,10 @@ function handleCardClick(event) {
   score ++;
   scoreBoard.innerText = 'Your score: ' + (score);
 
-  if(storedScores >= 1) {
-    const lowScore = document.createElement('p');
-    lowScore.innerText = `The lowest score is ${lowScores[0]}`;
+  if(lowScores.length >= 1) {
+    let lowScore = document.createElement('p');
+    lowScore.innerText = `The lowest score is ${lowScores[0]} and ${lowGuess[0]} average guess per card.`
     scoreBoard.prepend(lowScore);
-    console.log('low score ' + gameContainer.childElementCount * lowGuess[0]);
     }
 
   if (!cardOne) {
@@ -156,10 +158,10 @@ function handleCardClick(event) {
         scoreBoard.innerText = `You won! Your score is ${score}  `;
         // storedScores.push(score);
         // if( score < lowScores[0]) {
-        localStorage.setItem('storedScores', JSON.stringify(score));
+        // localStorage.setItem('storedScores', JSON.stringify(score));
       
         let avgGuess = score/ gameContainer.childElementCount;
-        localStorage.setItem('avgGuess', JSON.stringify(avgGuess));
+        // localStorage.setItem('avgGuess', JSON.stringify(avgGuess));
         scoreBoard.innerText = `Nice work! Your score is ${score} and your average guess per card is ${avgGuess}.`;
 
 
@@ -169,6 +171,25 @@ function handleCardClick(event) {
         button.innerText = "Play again?";
         scoreBoard.appendChild(button);
         button.addEventListener('click', function() {
+
+          if(lowScores.length < 1) {
+            lowScores.push(score);
+            localStorage.setItem('lowScores', JSON.stringify(lowScores));
+            }
+  
+            else if(score < lowScores[0]) {
+              lowScores.unshift(score);
+              localStorage.setItem('lowScores', JSON.stringify(lowScores));
+            }
+
+            if(lowGuess.length <1) {
+              lowGuess.push(avgGuess);
+              localStorage.setItem('lowGuess', JSON.stringify(lowGuess));
+            }
+            else if(avgGuess < lowGuess[0]) {
+              lowGuess.unshift(avgGuess);
+              localStorage.setItem('lowGuess', JSON.stringify(lowGuess));
+            }
           location.reload();
         });
       }
@@ -183,5 +204,5 @@ function handleCardClick(event) {
   }
 }
 
-lowScores = JSON.parse(localStorage.storedScores);
-lowGuess = JSON.parse(localStorage.avgGuess);
+// lowScores = JSON.parse(localStorage.storedScores);
+// lowGuess = JSON.parse(localStorage.avgGuess);
