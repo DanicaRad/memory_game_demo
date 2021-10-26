@@ -127,6 +127,7 @@ function handleCardClick(event) {
 
   if(lowScores.length >= 1) {
     let lowScore = document.createElement('p');
+    lowScore.className = 'score';
     lowScore.innerText = `The lowest score is ${lowScores[0]} and ${lowGuess[0]} average guess per card.`;
     scoreBoard.prepend(lowScore);
     }

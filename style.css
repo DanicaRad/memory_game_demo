@@ -1,17 +1,25 @@
+#game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px 20px;
+  margin: 10px 30px;
+}
+
 #game div {
-    border: 1px solid black;
+    box-shadow: 6px 3px rgba(255, 255, 255, .3);
     border-radius: 5%;
     width: 15%;
     height: 200px;
-    margin: 10px;
+    margin: 10px auto;
     display: inline-block;
-    background: hidden;
+    background-color: white;
   }
 
 #game div:focus {
   border: 3px;
 }
-
+`
 label {
   color: red;
   font-weight: bold;
@@ -19,10 +27,56 @@ label {
 
 body {
   font-family: 'roboto', sans-serif;
+  color: white;
+  background-color: #15007d;
 }
 
 h1 {
-  font-weight: 500;
+  display: flex;
+  font-weight: 700;
+  font-size: 3em;
   justify-content: center;
-  size: 10em;
+  margin: 20px auto;
+}
+
+form {
+  display: flex;
+  /* flex-direction: column; */
+  width: fit-content;
+  justify-items: center;
+  margin: auto;
+}
+
+input, button {
+  font-family: 'roboto', sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px 5px;
+}
+
+button {
+  background-color: #eaff82;
+  font-weight: 700;
+  border-style: none;
+  color: #15007d;
+}
+
+button:hover {
+  background-color: #1d51fc;
+  color: #eaff82;
+}
+
+#score {
+  color: #eaff82;
+  font-weight: 500;
+  margin: 10px 30px;
+  font-size: 1.25em;
+
+}
+
+p.score {
+  color: white;
+  font-weight: 300;
+  margin: 10px auto;
 }
