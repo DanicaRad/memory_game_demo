@@ -16,3 +16,13 @@ label {
   color: red;
   font-weight: bold;
 }
+
+body {
+  font-family: 'roboto', sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  justify-content: center;
+  size: 10em;
+}
