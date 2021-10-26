@@ -32,7 +32,6 @@ gameContainer.innerHTML = '';
 let input = document.createElement('input');
 input.type = "text";
 input.placeholder = "How many cards?";
-let label = document.querySelector('label');
 form.appendChild(input);
 let button = document.createElement('button');
 button.innerText = "Start Game";
@@ -42,8 +41,10 @@ form.addEventListener('submit', function(e) {
 
   e.preventDefault();
 
-  if(typeof input.value != "Number" && input.value % 2 != 0) {
-    label.innerText = "Please selet an even number of cards!";
+  if(typeof input.value != "Number" && input.value % 2 != 0 || !input.value) {
+    let p = document.createElement('p');
+    gameContainer.prepend(p);
+    p.innerText = 'Please select an even number of cards!';
     form.reset();
     return;
   }

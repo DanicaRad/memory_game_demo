@@ -20,9 +20,11 @@
   border: 3px;
 }
 
-label {
+p {
+  font-size: 1.05em;
   color: red;
-  font-weight: bold;
+  font-weight: 500;
+  margin: 0 auto;
 }
 
 body {
@@ -49,12 +51,12 @@ input, button {
   font-size: 1em;
   justify-content: center;
   padding: 5px;
-  margin: 10px 10px;
+  margin: 10px 10px 0px;
 }
 
 button {
   background-color: #eaff82;
-  font-weight: 700;
+  font-weight: 500;
   border-style: none;
   color: #15007d;
 }
