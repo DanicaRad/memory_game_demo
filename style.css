@@ -32,17 +32,15 @@ body {
 }
 
 h1 {
-  display: flex;
   font-weight: 700;
   font-size: 3em;
-  justify-content: center;
+  text-align: center;
   margin: 40px auto 15px;
 }
 
 form {
   display: flex;
   width: fit-content;
-  justify-items:;
   margin: auto;
 }
 
@@ -77,5 +75,13 @@ button:hover {
 p.score {
   color: white;
   font-weight: 300;
+  margin: 10px auto;
+}
+
+#score > button#play {
+  font-family: 'roboto', sans-serif;
+  font-size: 1em;
+  justify-content: center;
+  padding: 5px;
   margin: 10px auto;
 }

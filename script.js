@@ -161,6 +161,7 @@ function handleCardClick(event) {
         let br = document.createElement('br');
         scoreBoard.appendChild(br);
         let button = document.createElement('button');
+        button.id = 'play';
         button.innerText = "Play again?";
         scoreBoard.appendChild(button);
         button.addEventListener('click', function() {
