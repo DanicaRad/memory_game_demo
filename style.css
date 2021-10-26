@@ -23,7 +23,7 @@
 p {
   font-size: 1.05em;
   color: rgb(255, 94, 94);
-  font-weight: 400;
+  font-weight: 500;
   margin: 0 auto;
 }
 
@@ -74,10 +74,10 @@ button:hover {
 
 }
 
-p.score {
+p.score, #score > p {
   color: white;
-  font-weight: 300;
-  margin: 10px auto;
+  font-weight: 400;
+  margin: 10px auto 5px;
 }
 
 #score > button#play {
