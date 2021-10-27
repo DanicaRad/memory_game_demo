@@ -7,8 +7,10 @@
 }
 
 #game div {
-    box-shadow: 6px 3px rgba(255, 255, 255, .3);
+    /* box-shadow: 6px 3px #282828; */
+    box-shadow: 6px 6px #15db95;
     border-radius: 5%;
+    border: 1px solid #17c688;
     width: 15%;
     height: 200px;
     margin: 10px auto;
@@ -30,14 +32,15 @@ p {
 body {
   font-family: 'roboto', sans-serif;
   color: white;
-  background-color: #15007d;
+  background-color: #0c0032;
 }
 
 h1 {
-  font-weight: 700;
+  font-weight: 300;
   font-size: 3em;
   text-align: center;
   margin: 40px auto 15px;
+  /* letter-spacing: 1px; */
 }
 
 form {
@@ -54,21 +57,25 @@ input, button {
   margin: 10px 10px 0px;
 }
 
+input {
+  color: #282828
+}
+
 button {
-  background-color: #eaff82;
-  font-weight: 500;
+  background-color: #3500d3;
+  font-weight: 300;
   border-style: none;
-  color: #15007d;
+  color: white;
 }
 
 button:hover {
-  background-color: #4974a5;
-  color: #eaff82;
+  background-color: #15db95;
+  color: #0c0032;
 }
 
 #score {
-  color: #eaff82;
-  font-weight: 500;
+  color: #15db95;
+  font-weight: 300;
   margin: 10px 30px;
   font-size: 1.25em;
 
@@ -76,14 +83,16 @@ button:hover {
 
 p.score, #score > p {
   color: white;
-  font-weight: 400;
-  margin: 10px auto 5px;
+  font-weight: 300;
+  margin: 10px auto;
 }
 
 #score > button#play {
   font-family: 'roboto', sans-serif;
-  font-size: 1em;
+  font-size: .95em;
+  font-weight: 300;
   justify-content: center;
   padding: 5px;
-  margin: 10px auto;
+  /* letter-spacing: .1px; */
+  margin: 10px auto 0px;
 }

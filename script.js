@@ -97,8 +97,10 @@ function createDivsForColors(colorArray) {
 
   scoreBoard.innerText = '';
   if(lowScores.length >= 1) {
+  scoreBoard.innerHTML = '<p><br></p>';
   const lowScore = document.createElement('p');
-  lowScore.innerText = `The lowest score is ${lowScores[0]}`;
+  lowScore.className = "score";
+  lowScore.innerText = `The lowest score is ${lowScores[0]} and lowest average guess per card is ${lowGuess[0]}.`;
   scoreBoard.prepend(lowScore);
   }
 
